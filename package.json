@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-memory-warning",
+  "version": "1.0.1",
+  "description": "Cordova Memory Warning Plugin",
+  "cordova": {
+    "id": "cordova-plugin-memory-warning",
+    "platforms": [
+      "ios",
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acutulus/cordova-plugin-memory-warning.git"
+  },
+  "keywords": [
+    "cordova",
+    "memory-warning",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Acutulus Enterprises LLC",
+  "license": "Apache 2.0"
+}
