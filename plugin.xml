@@ -28,25 +28,24 @@
     <keywords>cordova,console</keywords>
     <repo>https://github.com/acutulus/cordova-plugin-memory-warning.git</repo>
 
-    <js-module src="www/logger.js" name="logger">
-        <clobbers target="cordova.logger" />
+
+    <js-module src="www/memory-warning.js" name="MemoryWarning">
+        <clobbers target="co.acutulus.memorywarning" />
     </js-module>
-    
-    <js-module src="www/console-via-logger.js" name="console">
-        <clobbers target="console" />
-    </js-module>
-        
+            
     <!-- ios -->
     <platform name="ios">
 
         <config-file target="config.xml" parent="/*">
-		<feature name="Console">
-			<param name="ios-package" value="CDVLogger"/>
-		</feature>
+    		<feature name="MemoryWarning">
+    			<param name="ios-package" value="CDVMemoryWarning"/>
+    		</feature>
         </config-file>
 
-	<header-file src="src/ios/CDVLogger.h" />
-	<source-file src="src/ios/CDVLogger.m" />
+	     <header-file src="src/ios/CDVMemoryWarning.h" />
+	     <source-file src="src/ios/CDVMemoryWarning.m" />
+       <header-file src="src/ios/AppDelegate+memory.h" />
+       <source-file src="src/ios/AppDelegate+memory.m" />
 
     </platform>
 
