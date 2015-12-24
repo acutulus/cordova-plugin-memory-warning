@@ -25,7 +25,7 @@
 
 
 -(void) pluginInitialize{
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveMemoryWarning:)
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveMemoryWarning)
              name:@"UIApplicationDidReceiveMemoryWarning" object:nil];
   callbackId = nil;
 }
@@ -33,13 +33,16 @@
 - (void)registerCallback:(CDVInvokedUrlCommand*)command {
   callbackId = command.callbackId;
 }
-- (void)receiveMemoryWarning:(NSNotification *) notification
+- (void)receiveMemoryWarning
 {
   if (callbackId != nil) {
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     [pluginResult setKeepCallbackAsBool:YES];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];      
   }
+}
+- (void)removeCache:(CDVInvokedUrlCommand*)command {
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
 
 @end

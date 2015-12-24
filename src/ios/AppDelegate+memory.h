@@ -7,6 +7,6 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+@interface AppDelegate (memory)
 - (void)applicationDidReceiveMemoryWarning:(UIApplication*)application;
 @end

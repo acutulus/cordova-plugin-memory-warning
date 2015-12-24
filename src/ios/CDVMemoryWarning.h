@@ -23,5 +23,6 @@
 
 - (void)receiveMemoryWarning;
 - (void)registerCallback:(CDVInvokedUrlCommand*)command;
+- (void)removeCache:(CDVInvokedUrlCommand*)command;
 
 @end
